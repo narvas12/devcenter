@@ -10,7 +10,7 @@ class TaskViewSet(viewsets.ModelViewSet):
     serializer_class = TaskSerializer
     permission_classes = [IsAuthenticated, IsTaskOwner]
 
-class CompletedTaskView(generics.ListAPIView):
+class CompletedTasksAPIView(generics.ListAPIView):
     queryset = Task.objects.filter(completed=True)
     serializer_class = TaskSerializer
     permission_classes = [IsAuthenticated]
